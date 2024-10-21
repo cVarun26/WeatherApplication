@@ -4,15 +4,12 @@ import com.example.WeatherAPP.model.ResponseModel;
 import com.example.WeatherAPP.service.AlertService;
 import com.example.WeatherAPP.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 
 @RestController
 public class WeatherController {
@@ -30,11 +27,10 @@ public class WeatherController {
                 .body(weatherService.getCurrentWeather());
     }
 
-    @GetMapping("/alerts")
-    public ResponseEntity<String> getWeatherAlert(@RequestParam int threshold, @RequestParam String city) {
+    @PostMapping("/setAlert")
+    public ResponseEntity<Boolean> setAlertConfig(@RequestParam String city, @RequestParam int threshold){
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(alertService.getWeatherAlert(city, threshold));
+                .body(alertService.setAlert(city,threshold));
     }
-
 }
