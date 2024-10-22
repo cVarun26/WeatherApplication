@@ -33,4 +33,9 @@ public class WeatherController {
                 .status(HttpStatus.OK)
                 .body(alertService.setAlert(city,threshold));
     }
+
+    @GetMapping("/visualize")
+    public ResponseEntity<String> getViz(){
+      return null;
+    }
 }

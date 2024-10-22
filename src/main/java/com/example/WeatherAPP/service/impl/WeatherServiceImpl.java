@@ -94,7 +94,7 @@ public class WeatherServiceImpl implements WeatherService {
         return responses;
     }
 
-    private void handleWeatherAlerts(WeatherModel response) {
+    public void handleWeatherAlerts(WeatherModel response) {
 
         Optional<AlertConfig> alertConfigOptional = getAlertConfigFromDb();
 
@@ -136,7 +136,7 @@ public class WeatherServiceImpl implements WeatherService {
         lastAlertTime = LocalDateTime.now(); // Update last alert time
     }
 
-    private void sendEmailAlert(String body, String subject) {
+    public void sendEmailAlert(String body, String subject) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(Constants.EMAIL);
         message.setSubject(subject);
@@ -156,12 +156,12 @@ public class WeatherServiceImpl implements WeatherService {
         );
     }
 
-    private String formatTemperature(float kelvinTemp) {
+    public String formatTemperature(float kelvinTemp) {
         float celsiusTemp = kelvinTemp - 273.15F;
         return String.format("%.2f", celsiusTemp);
     }
 
-    private static float getAvgTemp(float maxTemp, float minTemp) {
+    public static float getAvgTemp(float maxTemp, float minTemp) {
         return (maxTemp + minTemp) / 2;
     }
 }
