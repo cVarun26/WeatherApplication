@@ -34,8 +34,5 @@ public class WeatherController {
                 .body(alertService.setAlert(city,threshold));
     }
 
-    @GetMapping("/visualize")
-    public ResponseEntity<String> getViz(){
-      return null;
-    }
+
 }
