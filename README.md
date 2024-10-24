@@ -16,6 +16,20 @@ This project is a real-time data processing system that monitors weather conditi
 - **API**: OpenWeatherMap API
 - **Visualization**: Chart.js (for graphical data representation)
 
+ ## Design Choices
+
+### Backend
+- *Framework*: Spring Boot for its scalability, flexibility, and ease of integration with MySQL and external APIs.
+- *API Integration*: OpenWeatherMap API provides weather data that is fetched and processed by the backend every 5 minutes (or as configured).
+- *Data Processing*: Temperatures are converted from Kelvin to Celsius (or Fahrenheit based on user preferences), and daily summaries are computed by aggregating data over time.
+- *Alerting*: Alerts are set by users and triggered when real-time weather data exceeds configured thresholds.
+- *Persistence*: MySQL is used for storing historical weather data, daily summaries, and user-configured thresholds.
+  
+### Frontend
+- *Framework*: React.js was chosen for building an interactive and dynamic UI.
+- *Visualization*: Chart.js is used to create weather data visualizations, including temperature trends and alerts.
+- *API Consumption*: The frontend consumes RESTful APIs exposed by the backend to display real-time weather data and manage alerts.
+
 ## System Components
 
 ### Backend (Spring Boot)
