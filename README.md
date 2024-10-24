@@ -36,9 +36,9 @@ This project is a real-time data processing system that monitors weather conditi
    - System continuously monitors weather conditions and triggers alerts when thresholds are breached.
 
 4. **API Endpoints**:
-   - `/weather/{city}`: Retrieves current weather data for a specific city.
-   - `/weather/alerts`: Sets alert configurations and checks against real-time data.
-   - `/weather/summary/{city}`: Provides daily weather summary for the specified city.
+   - `/viz/{city}`: Collects data for visualisation based on the average temperature of the city.
+   - `/setAlert`: Sets alert configurations and checks against real-time data.
+   - `/weather`: Provides daily weather summary.
 
 ### Frontend (React.js)
 1. **Dashboard**:
@@ -127,3 +127,8 @@ The MySQL database stores:
 ## Alerting system
 
  - Configured a an alerting system using the JavaMailSender annotation which sends an email to a pre-existing email account whenever the user configured temperature threshold is breached in the respectively configured city.
+ - The credentials for the pre-exisiting :-
+   email - johndoe260703@gmail.com
+   password - johndoe1234
+
+### MAKE SURE TO RUN THE BACKEND WHILE RUNNING THE REACT APP
