@@ -1,0 +1,5 @@
+aws_region   = "ap-south-1"
+aws_profile  = "default"
+project_name = "atmo"
+vpc_cidr     = "10.0.0.0/16"
+image_url    = "490004624993.dkr.ecr.ap-south-1.amazonaws.com/atmo:latest"
